@@ -1,0 +1,26 @@
+<div class="container">
+	<%= notice %>
+	<div class="row">
+	  <div class="top-message col-md-offset-3 col-md-6">
+		<h1>welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"><strong>Bookers</strong>  !!</span></h1>
+		<p>
+			In
+			<span class="glyphicon glyphicon-book" aria-hidden="true"><strong>Booksers</strong>,</span>
+		</p>
+		<p> you can share a d exchange your opinions , inpressions , and emotions</p>
+		<p> about varioius books!</p>
+		<div class="bin-wrapper">
+			<div class="row">
+				<div class="btn btn_info col-xs-10 col-xs-offset-1 sign_in" style="background-color: #5bc0de;">
+				<%= link_to "Log in", user_session_path %>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="btn btn_info col-xs-10 col-xs-offset-1 sign_in" style="background-color: #5cb85c;">
+				<%= link_to "Sing Up", new_user_registration_path %>
+			   </div>
+			</div>
+		</div>
+	  </div>
+	</div>
+</div>

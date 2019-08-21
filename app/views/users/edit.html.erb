@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="row">
+		<h2>User info</h2>
+		<%= form_for(@user) do |f| %>
+   <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>error prohibited this obj from being saved:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+      <% end %>
+          <strong>Name</strong><%= f.text_field:name %><br><br>
+         <strong>Image</strong><br>
+         <%= f.attachment_field :profile_image %><br />
+         <strong>Introduction </strong><%= f.text_area :introduction %><br><br>
+    <%= f.submit "Upadate User" %>
+   <% end %>
+   </div>
+</div>

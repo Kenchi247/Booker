@@ -1,0 +1,38 @@
+<%= render 'books/list', book: @book, user: @user %>
+ <style>
+ 	.to {
+ 		border-bottom: 1px solid gray;
+ 		margin-bottom: 10px;
+ 	}
+ 	.t {
+ 		border-bottom: 1px solid gray;
+ 		min-height: 50px;
+ 		padding: 5px 0;
+ 	}
+ </style>
+		<div class="col-xs-9 col-xs-offset-1">
+			<h2>Books</h2>
+			 <table>
+			 	<thead>
+			 		<div class="row to">
+			 			<div class="col-xs-2"></div>
+			 			<div class="col-xs-2">Title</div>
+			 			<div class="col-xs-8">Opinion</div>
+			 		</div>
+			 	</thead>
+			 	<tbody>
+			 		<% @books.each do |book| %>
+			 		 <div class="row t">
+			 		 	<div class="col-xs-2"><%= attachment_image_tag book.user, :profile_image, size:"40x40", class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+			 		 	</div>
+			 		 	<div class="col-xs-2"><%= link_to book_path(book.id) do %><%= book.title %>
+			 		 	</div><% end %>
+			 		 	<div class="col-xs-8"><%= book.body %>
+			 		 	</div>
+			 		 </div>
+			 		 <% end %>
+			 	</tbody>
+		     </table>
+		</div>
+	</div>
+</div>
